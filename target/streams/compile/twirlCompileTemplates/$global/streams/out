@@ -1,0 +1,4 @@
+[0m[[31merror[0m] [0mC:\Users\Frederic Noyer\CloudStation\HEIG-VD\3eme\POO\Todo\app\views\todo.scala.html:55: Expected '}' but found '@'[0m
+[0m[[31merror[0m] [0m        <div class="header-panel" align="center">Todo List Webb App by Frédéric Noyer @ HEIG-VD</div>[0m
+[0m[[31merror[0m] [0m                                                                                      ^[0m
+[0m[[31merror[0m] [0m(compile:[31mtwirlCompileTemplates[0m) Twirl compilation failed[0m

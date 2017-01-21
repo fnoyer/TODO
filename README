@@ -1,0 +1,36 @@
+This is your new Play application
+=================================
+
+This file will be packaged with your application when using `activator dist`.
+
+There are several demonstration files available in this template.
+
+TODO List using scala and play framework
+
+Controllers
+===========
+
+- HomeController.scala:
+
+  Shows how to handle simple HTTP requests.
+
+Models
+==========
+- TODO
+
+  The models that host the message
+
+  
+Views
+==========
+- Todo
+
+
+Database
+==========
+Mysql ----> the application.conf has to be completed (login and password)
+DB schema = todo
+DB table = tasks
+rows (id : Int not null auto increment (primary key) and (content : char(100) not null
+
+Enjoy!

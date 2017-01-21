@@ -1,0 +1,54 @@
+
+@*
+* This template takes a single argument, a String containing a
+* message to display.
+*@
+@(tasks: List[Todo], taskForm: Form[Todo])
+
+
+@*
+* Call the `main` template with two arguments. The first
+* argument is a `String` with the title of the page, the second
+* argument is an `Html` object containing the body of the page.
+*@
+@import java.util.Date
+
+@main("TODO LIST") {
+
+    <div class="container">
+        <h1>@(new Date().toString)</h1>
+        <div class="panel-group">
+            <div class="panel panel-sample">
+                <div class="panel-heading" align="center"><h3>There is <span class="badge">@tasks.size</span> task@if(tasks.size > 1){s} on the pipe!</h3></div>
+                <div class="panel-body">
+                    @for(task <- tasks){
+                        <div class="row">
+                                @helper.form(routes.HomeController.deleteTodo(task.id.getOrElse(0))) {
+                                    <div class="col-sm-1"><button type="submit" class="btn btn-sample btn-sm" >&#10004; Done</button></div>
+                                    <div class="bg-sample col-sm-5" align="left" ><h5>@task.content</h5></div>
+                                }
+                                @helper.form(routes.HomeController.updateTodo(task.id.getOrElse(0))) {
+                                    <div class="col-sm-5"><input class="form-control input-xm" placeholder="update" name="content" type="text"></div>
+                                    <div class="col-sm-1"><button type="submit" class="btn btn-sample btn-sm" >&#9998; Update</button></div>
+                                }
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-8 col-md-offset-2"><hr></div>
+                        </div>
+                    }
+                    <div class="row">
+                        @helper.form(routes.HomeController.newTodo) {
+                            <div class="col-sm-11"><input class="form-control input-sm" placeholder="content" name="content" type="text" value="" required></div>
+                            <div class="col-sm-1">
+                                <button type="submit" class="btn btn-sample btn-sm btn-block  btn-sm"><span class="glyphicon glyphicon-plus"></span></button>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="panel-footer" align="center">
+                    Todo List Webb App by Frédéric Noyer @@ HEIG-VD 2017
+                </div>
+            </div>
+        </div>
+    </div>
+}
